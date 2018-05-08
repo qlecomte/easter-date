@@ -42,6 +42,25 @@ function easter(year, asString){
 
 	} else if (year >= 325) {
 		// Julian Calendar
+		const a = year % 19;
+		const b = year % 4;
+		const c = year % 7;
+		const M = 15;
+		const N = 6;
+		const d = (19 * a + M) % 30;
+		const e = (2*b + 4*c + 6*d + N) % 7;
+
+		const H = 22 + d + e;
+		const Q = d + e - 9;
+
+		if (Q > 0){
+			// We are in April
+			easterDate = year + "-04-" + (Q > 9 ? "" + Q: "0" + Q);
+		} else {
+			// We are in March
+			easterDate = year + "-03-" + (H > 9 ? "" + H: "0" + H);
+		}
+
 	}
 
 	if (asString){
