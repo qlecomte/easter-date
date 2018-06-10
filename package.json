@@ -1,5 +1,5 @@
 {
-  "name": "easter",
+  "name": "easter-date",
   "version": "1.0.0",
   "description": "Calculate Easter date for Gregorian and Julian calendars",
   "main": "index.js",
